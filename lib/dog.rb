@@ -56,7 +56,7 @@ class Dog
 
   def self.find_by_id(id)
     sql = <<-SQL
-      SELECT * FROM songs WHERE id = ?
+      SELECT * FROM dogs WHERE id = ?
     SQL
     DB[:conn].execute(sql, id).map do |row|
       self.new_from_db
