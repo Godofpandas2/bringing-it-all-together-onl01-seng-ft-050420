@@ -73,6 +73,7 @@ class Dog
       dog = Dog.new(dog_info[0], dog_info[1])
     else
       dog = self.create(name: name, breed: breed)
+    end
   end
 
   def self.find_by_name
