@@ -58,7 +58,8 @@ class Dog
     sql = "SELECT * FROM songs WHERE id = ?"
     DB[:conn].execute(sql, id).map do |row|
       self.new_from_db
-  end.first
+    end.first
+  end
 
   def self.find_or_create_by
 
