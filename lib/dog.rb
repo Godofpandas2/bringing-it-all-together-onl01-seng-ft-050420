@@ -54,9 +54,11 @@ class Dog
     dog
   end
 
-  def self.find_by_db
-
-  end
+  def self.find_by_id(id)
+    sql = "SELECT * FROM songs WHERE id = ?"
+    DB[:conn].execute(sql, id).map do |row|
+      self.new_from_db
+  end.first
 
   def self.find_or_create_by
 
