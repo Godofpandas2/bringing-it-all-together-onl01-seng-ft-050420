@@ -70,11 +70,11 @@ class Dog
     dog = DB[:conn].execute("SELECT * FROM dogs WHERE name = ? AND breed = ?")
     if !dog.empty?
       dog_info = dog[0]
-      binding.pry
       dog = Dog.new(dog_info[0], dog_info[1])
     else
       dog = self.create(name: name, breed: breed)
     end
+      dog
   end
 
   def self.find_by_name
