@@ -62,7 +62,7 @@ class Dog
     binding.pry
     DB[:conn].execute(sql, id).map do |row|
       binding.pry
-      self.new_from_db
+      self.new_from_db(row)
     end
   end
 
